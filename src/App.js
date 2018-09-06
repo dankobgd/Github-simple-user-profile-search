@@ -22,15 +22,14 @@ class App extends Component {
   };
 
   fetchUser = async e => {
-    const url = `https://api.github.com/users/${
-      e.target.value
-    }?client_id=ffc45ac6cc4e1ad3900c&client_secret=14e49a18ec83055b299aa50ba0349bd6e8ae8dae`;
+    const { value: name } = e.target;
+
+    const { REACT_APP_CLIENT_ID, REACT_APP_CLIENT_SECRET } = process.env;
+    const url = `https://api.github.com/users/${name}?client_id=${REACT_APP_CLIENT_ID}&client_secret=${REACT_APP_CLIENT_SECRET}`;
     const response = await fetch(url);
     const data = await response.json();
 
-    const reposURL = `https://api.github.com/users/${
-      e.target.value
-    }/repos?client_id=ffc45ac6cc4e1ad3900c&client_secret=14e49a18ec83055b299aa50ba0349bd6e8ae8dae`;
+    const reposURL = `https://api.github.com/users/${name}/repos?client_id=${REACT_APP_CLIENT_ID}&client_secret=${REACT_APP_CLIENT_SECRET}`;
     const reposResponse = await fetch(reposURL);
     const userRepos = await reposResponse.json();
 

@@ -1,38 +1,18 @@
 import React from 'react';
 
-const formStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  border: '1px solid #a34444',
-  color: '#a34444',
-  padding: '2rem',
-};
-
-const pStyle = {
-  fontSize: '1.4rem',
-};
-
-const inputStyle = {
-  display: 'inline-flex',
-  marginTop: '2rem',
-  width: '400px',
-  height: '35px',
-  lineHeight: '35px',
-  padding: '1rem',
-  fontSize: '1.2rem',
-  color: '#a34444',
-};
-
 const SearchForm = props => {
   const { debounceEvent, fetchUser } = props;
 
   return (
     <div className="container">
-      <form style={formStyle}>
-        <p style={pStyle}>Search github users by typing their name</p>
-        <input style={inputStyle} type="text" placeholder="Github Username" onChange={debounceEvent(fetchUser, 500)} />
+      <form className="searchForm">
+        <p className="searchFormText">Find Github user Information by typing their name</p>
+        <input
+          className="searchInput"
+          type="text"
+          placeholder="Github Username"
+          onChange={debounceEvent(fetchUser, 500)}
+        />
       </form>
     </div>
   );

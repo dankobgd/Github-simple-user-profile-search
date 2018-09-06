@@ -10,6 +10,26 @@ body {
   font-family: sans-serif, "Courier New", Courier, monospace;
 }
 
+a {
+  text-decoration: none;
+}
+
+h1 {
+  color: rgb(105, 105, 105);
+  margin-top: 2rem;
+}
+
+hr {
+  color: #f3f3f3;
+  margin-top: 4px;
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    text-align: center;
+  }
+}
+
 .container {
   width: 70vw;
   margin: 2rem auto 0 auto;
@@ -24,5 +44,243 @@ body {
 @media screen and (max-width: 600px) {
   .container {
     width: 90vw;
+  }
+}
+
+/************* ALERT ******************/
+.alert {
+  background-color: #a34444;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.5rem;
+  margin: 1rem auto 0 auto;
+  width: 300px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/************* SEARCH FORM ******************/
+.searchForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #a34444;
+  color: #a34444;
+  padding: 2rem;
+}
+
+.searchFormText {
+  font-size: 1.4rem;
+}
+
+.searchInput {
+  display: inline-flex;
+  margin-top: 2rem;
+  width: 50vw;
+  height: 35px;
+  line-height: 35px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: #a34444;
+}
+
+@media screen and (max-width: 900px) {
+  .searchForm {
+    padding: 1rem;
+  }
+  .searchInput {
+    width: 100%;
+  }
+}
+
+/************* TOPBAR ******************/
+.nav {
+  display: flex;
+  background-color: #a34444;
+  color: #fff;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  font-family: cursive;
+  font-size: 1.2rem;
+}
+
+/************* USER INFO  ******************/
+
+.profileInfo {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "avt inf inf inf inf";
+  grid-gap: 2rem;
+  margin-top: 2rem;
+}
+
+.avatarArea {
+  grid-area: avt;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 6px;
+}
+
+.profileLink {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #34495e;
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+}
+
+.infoArea {
+  grid-area: inf;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "bgs bgs bgs bgs"
+    "dts dts dts dts";
+  grid-row-gap: 1rem;
+}
+
+.badges {
+  grid-area: bgs;
+  display: flex;
+  justify-content: center;
+}
+
+.badge {
+  color: #fff;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.badges :nth-child(1) {
+  background-color: #3498db;
+}
+
+.badges :nth-child(2) {
+  background-color: #3d9970;
+}
+
+.badges :nth-child(3) {
+  background-color: #d87093;
+}
+
+.badges :nth-child(4) {
+  background-color: #e06b6b;
+  margin-right: 0;
+}
+
+.details {
+  grid-area: dts;
+  display: grid;
+  grid-gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.detail {
+  background-color: #f2f2f2;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* repos */
+.reposInfo {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}
+
+.repo {
+  padding: 0.5rem;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+}
+
+.repo a {
+  color: #333;
+}
+
+.items {
+  margin-left: auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.item {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.stars {
+  background-color: #3498db;
+  margin-right: 0.5rem;
+}
+
+.watchers {
+  background-color: #3d9970;
+  margin-right: 0.5rem;
+}
+
+.forks {
+  background-color: #d87093;
+}
+
+@media screen and (max-width: 800px) {
+  .profileInfo {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "avt"
+      "inf";
+  }
+
+  .profileLink {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .badges {
+    flex-direction: column;
+  }
+
+  .badge {
+    margin-top: 2px;
+  }
+
+  .profileLink {
+    width: 250px;
+  }
+
+  .repo {
+    flex-direction: column;
+  }
+
+  .items {
+    margin: 0;
+  }
+
+  .profileLink {
+    width: 250px;
   }
 }
