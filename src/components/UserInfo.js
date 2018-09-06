@@ -46,6 +46,14 @@ const details = {
   margin: '0.5rem',
 }
 
+const detail = {
+  listStyleType: 'none',
+  borderBottom: '1px solid #a34444',
+  color: '#a34444',
+  padding: '0.5rem',
+  marginTop: '0.5rem',
+}
+
 const reposInfo = {
   display: 'flex',
   flexDirection: 'column',
@@ -60,13 +68,13 @@ const repoStyle = {
   justifyContent: 'space-between',
 }
 
-const detail = {
-  listStyleType: 'none',
-  borderBottom: '1px solid #a34444',
+const item = {
+  marginRight: '1rem',
   color: '#a34444',
   padding: '0.5rem',
   marginTop: '0.5rem',
 }
+
 
 const UserInfo = (props) => {
   const { avatar_url, html_url, public_repos, public_gists, followers, following, company, blog, location, created_at } = props.userData;
@@ -77,7 +85,7 @@ const UserInfo = (props) => {
       <div style={profileInfo}>
         <div style={avatarArea}>
           <img style={avatar} src={avatar_url} alt='avatar' />
-          <a href={`${html_url}`} target='_blank'>Go to profile</a>
+          <a href={html_url} target='_blank'>Go to profile</a>
         </div>
         <div style={infoArea}>
           <div style={badges}>
@@ -99,10 +107,10 @@ const UserInfo = (props) => {
       <div style={reposInfo}>
         {props.repos.map(repo =>
           <div style={repoStyle} key={repo.id}>
-            <span>Name: {repo.name}</span>
-            <span>Stars: {repo.stargazers_count}</span>
-            <span>Watchers: {repo.watchers_count}</span>
-            <span>Forks: {repo.forks_count}</span>
+            <span style={item}>Name: {repo.name}</span>
+            <span style={item}>Stars: {repo.stargazers_count}</span>
+            <span style={item}>Watchers: {repo.watchers_count}</span>
+            <span style={item}>Forks: {repo.forks_count}</span>
           </div>)}
       </div>
     </div>
