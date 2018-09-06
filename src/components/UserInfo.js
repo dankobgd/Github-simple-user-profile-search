@@ -63,14 +63,14 @@ const User = (props) => {
           <img style={avatar} src={avatar_url} alt='avatar' />
           <a href={`${html_url}`} target='_blank'>Go to profile</a>
         </div>
-        <div className='infoArea'>
-          <div className='badges'>
+        <div style={infoArea}>
+          <div style={badges}>
             <span>Public repos: {public_repos}</span>
             <span>Public gists: {public_gists}</span>
             <span>Followers: {followers}</span>
             <span>Following: {following}</span>
           </div>
-          <div className='details'>
+          <div style={details}>
             <ul>
               <li>Company: {company}</li>
               <li>Website/Blog: {blog}</li>
@@ -80,9 +80,9 @@ const User = (props) => {
           </div>
         </div>
       </div>
-      <div className='reposInfo'>
+      <div style={reposInfo}>
         {props.repos.map(repo =>
-          <div className='repo' key={repo.id}>
+          <div style={repo} key={repo.id}>
             <span>Name: {repo.name}</span>
             <span>Stars: {repo.stargazers_count}</span>
             <span>Watchers: {repo.watchers_count}</span>
