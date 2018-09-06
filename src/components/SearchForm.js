@@ -25,13 +25,17 @@ const inputStyle = {
   color: '#a34444',
 };
 
-const searchForm = props => (
-  <div className="container">
-    <form style={formStyle}>
-      <p style={pStyle}>Search github users by typing their name</p>
-      <input style={inputStyle} type="text" placeholder="Github Username" />
-    </form>
-  </div>
-);
+const SearchForm = props => {
+  const { debounceEvent, fetchUser } = props;
 
-export default searchForm;
+  return (
+    <div className="container">
+      <form style={formStyle}>
+        <p style={pStyle}>Search github users by typing their name</p>
+        <input style={inputStyle} type="text" placeholder="Github Username" onChange={debounceEvent(fetchUser, 500)} />
+      </form>
+    </div>
+  );
+};
+
+export default SearchForm;

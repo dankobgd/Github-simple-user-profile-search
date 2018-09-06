@@ -33,6 +33,14 @@ const badges = {
   justifyContent: 'center',
 }
 
+const badge = {
+  backgroundColor: '#e06b6b',
+  color: '#fff',
+  borderRadius: '8px',
+  margin: '0 0.5rem',
+  padding: '0.6rem',
+}
+
 const details = {
   display: 'flex',
   margin: '0.5rem',
@@ -44,7 +52,7 @@ const reposInfo = {
   padding: '1rem',
 }
 
-const repo = {
+const repoStyle = {
   padding: '0.5rem',
   width: '100%',
   display: 'flex',
@@ -52,7 +60,15 @@ const repo = {
   justifyContent: 'space-between',
 }
 
-const User = (props) => {
+const detail = {
+  listStyleType: 'none',
+  borderBottom: '1px solid #a34444',
+  color: '#a34444',
+  padding: '0.5rem',
+  marginTop: '0.5rem',
+}
+
+const UserInfo = (props) => {
   const { avatar_url, html_url, public_repos, public_gists, followers, following, company, blog, location, created_at } = props.userData;
 
 
@@ -65,24 +81,24 @@ const User = (props) => {
         </div>
         <div style={infoArea}>
           <div style={badges}>
-            <span>Public repos: {public_repos}</span>
-            <span>Public gists: {public_gists}</span>
-            <span>Followers: {followers}</span>
-            <span>Following: {following}</span>
+            <span style={badge}>Public repos: {public_repos}</span>
+            <span style={badge}>Public gists: {public_gists}</span>
+            <span style={badge}>Followers: {followers}</span>
+            <span style={badge}>Following: {following}</span>
           </div>
           <div style={details}>
             <ul>
-              <li>Company: {company}</li>
-              <li>Website/Blog: {blog}</li>
-              <li>Location: {location}</li>
-              <li>Member since: {created_at}</li>
+              <li style={detail}>Company: {company}</li>
+              <li style={detail}>Website/Blog: {blog}</li>
+              <li style={detail}>Location: {location}</li>
+              <li style={detail}>Member since: {created_at}</li>
             </ul>
           </div>
         </div>
       </div>
       <div style={reposInfo}>
         {props.repos.map(repo =>
-          <div style={repo} key={repo.id}>
+          <div style={repoStyle} key={repo.id}>
             <span>Name: {repo.name}</span>
             <span>Stars: {repo.stargazers_count}</span>
             <span>Watchers: {repo.watchers_count}</span>
@@ -93,4 +109,4 @@ const User = (props) => {
   );
 }
 
-export default User;
+export default UserInfo;
