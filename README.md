@@ -1,3 +1,6 @@
-# Basic Github user profile search
+### Basic Github user profile search
+Display user profile and repositories info
 
-Displays basic info about user as well as the list of repositories
+
+### Screenshots:
+![github-search-profile-app-screenshot](https://user-images.githubusercontent.com/34239451/54762588-b1498680-4bf4-11e9-960c-385c5ff8e748.png)
